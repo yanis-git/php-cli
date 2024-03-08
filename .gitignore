@@ -1,0 +1,7 @@
+.env
+vendor/
+.DS_Store
+storage/
+!storage/.gitkeep
+.idea
+.php-cs-fixer.cache

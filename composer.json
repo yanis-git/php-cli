@@ -1,0 +1,37 @@
+{
+    "name": "yanis/cli",
+    "type": "project",
+    "require": {
+        "php": "^8.1",
+        "symfony/console": "^7.0",
+        "symfony/dotenv": "^7.0",
+        "symfony/dependency-injection": "^7.0",
+        "symfony/config": "^7.0",
+        "symfony/yaml": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Yanis",
+            "email": "yanis.ghidouche@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "symfony/var-dumper": "^7.0",
+        "friendsofphp/php-cs-fixer": "^3.51",
+        "phpstan/phpstan": "^1.10"
+    },
+    "scripts": {
+        "lint": "php-cs-fixer fix src",
+        "analyse": "phpstan analyse",
+        "test": "phpunit",
+        "quality": [
+            "@lint",
+            "@analyse"
+        ]
+    }
+}

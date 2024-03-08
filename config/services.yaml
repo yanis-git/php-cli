@@ -1,0 +1,22 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  _instanceof:
+    Symfony\Component\Console\Command\Command:
+      tags: [ 'app.command' ]
+
+  App\:
+    resource: '../src/*'
+
+  App\Application\App:
+    public: true
+    arguments:
+      - !tagged_iterator app.command
+
+  App\Command\VersionCommand:
+    arguments:
+      $version: '%env(APP_VERSION)%'
+      $baseDir: '%base_dir%'
